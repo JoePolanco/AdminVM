@@ -39,9 +39,9 @@ app.get('/', (req, res)=>{
 });
 
 app.put('/:id', (req, res)=> {
-    const {nombreDataCenter,idDataCenter, departamentoDataCenter, direccion,} = req.body;
+    const {nombreDataCenter,idDataCenter, departamentoDataCenter, direccion} = req.body;
     const id = req.params.id;
-
+console.log(id);
     filtro = {
         _id: id
     };
@@ -49,11 +49,10 @@ app.put('/:id', (req, res)=> {
         ...( nombreDataCenter && { nombreDataCenter }),
         ...( idDataCenter && { idDataCenter }),
         ...( departamentoDataCenter && { departamentoDataCenter }),
-        ...( direccion && { direccion }),
-        ...( dataCenter && { dataCenter })
+        ...( direccion && { direccion })
     }
-
-    dataCenter.findOneAndUpdate(filtro, update)
+    console.log(update);
+    dataCenter.findOneAndUpdate(filtro, update, {new: true})
     .then(()=>{
         res.status(201).send({message: "Se realizaron los cambios de manera exitosa."})
     })
@@ -61,5 +60,22 @@ app.put('/:id', (req, res)=> {
         res.status(500).send({error: err, message: "No se pudieron realizar los cambios."})
     })
 });
+
+app.delete('/:id', (req, res)=> {
+    const id = req.params.id;
+    filtro = {
+        _id: id
+    };
+    dataCenter.deleteOne(filtro)
+    .then(()=>{
+        res.status(201).send({message: "Se realizaron los cambios de manera exitosa."})
+    })
+    .catch(err=>{
+        res.status(500).send({error: err, message: "No se pudieron realizar los cambios."})
+    })
+});
+
+
+
 
 module.exports = app;
