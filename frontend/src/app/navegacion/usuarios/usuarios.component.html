@@ -1,0 +1,30 @@
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Usuario</th>
+      <th scope="col">Clave</th>
+      <th scope="col">Rol</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Departamento</th>
+      <th scope="col">email</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let listUser of listaUsuarios ">
+      <th scope="row">1</th>
+      <td>{{listUser.usuario}}</td>
+      <td>{{listUser.clave}}</td>
+      <td>{{listUser.rol}}</td>
+      <td>{{listUser.nombres}}</td>
+      <td>{{listUser.apellidos}}</td>
+      <td>{{listUser.departamento}}</td>
+      <td>{{listUser.email}}</td>
+
+    </tr>
+
+
+
+

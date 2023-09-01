@@ -1,0 +1,20 @@
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Nombre DC</th>
+      <th scope="col">ID Data Center</th>
+      <th scope="col">Depto Data Center</th>
+      <th scope="col">Direccion DC</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let listVent of listaDataCenter ">
+      <th scope="row">1</th>
+      <td>{{listVent.nombreDataCenter}}</td>
+      <td>{{listVent.idDataCenter}}</td>
+      <td>{{listVent.departamentoDataCenter}}</td>
+      <td>{{listVent.direccion}}</td>
+    </tr>
+
+

@@ -1,0 +1,37 @@
+<div class="container">
+  <h1 class="form-heading">login Form</h1>
+  <div class="login-form">
+  <div class="main-div">
+      <div class="panel">
+        <h2></h2>
+        <p>Sistema de Administracion de Ventanas Mantenimiento</p>
+          <h2></h2>
+          <img class="LogoClaro mat-elevation-z10" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Claro.svg/2048px-Claro.svg.png" alt="">
+      <h4 class="name">CLARO HONDURAS</h4>
+
+     <p>Por favor ingrese su usuario y clave de acceso</p>
+     </div>
+      <form [formGroup]="loginForm" >
+
+          <div class="form-group">
+            <label for="usuario" class="form-label"></label>
+            <input formControlName="usuario" type="usuario" class="form-control" id="usuario" placeholder="Ingrese usuario">
+          </div>
+
+          <div class="form-group">
+            <label for="clave" class="form-label"></label>
+            <input type="clave" class="form-control" id="clave" placeholder="Ingrese clave">
+
+          </div>
+          <div class="forgot">
+          <a href="reset.html">Olvido su clave?</a>
+           </div>
+          <button type="submit" class="btn btn-primary">Iniciar sesion</button>
+      </form>
+
+      </div>
+    <p class="botto-text"> Designed by Joel Polanco</p>
+   </div></div>
+
+
+

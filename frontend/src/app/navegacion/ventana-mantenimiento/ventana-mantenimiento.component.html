@@ -1,0 +1,36 @@
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Nombre DC</th>
+      <th scope="col">ID Data Center</th>
+      <th scope="col">Tipo de Mant</th>
+      <th scope="col">Fecha Inicio</th>
+      <th scope="col">Fecha Fin</th>
+      <th scope="col">Hora Inicio</th>
+      <th scope="col">Hora Fin</th>
+      <th scope="col">Justificacion de Actividad</th>
+      <th scope="col">RDA</th>
+      <th scope="col">Estado de solicitud</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let listVent of listaVentMant ">
+      <th scope="row">1</th>
+      <td>{{listVent.nombreDataCenter}}</td>
+      <td>{{listVent.idDataCenter}}</td>
+      <td>{{listVent.tipoMantenimiento}}</td>
+      <td>{{listVent.fechaInicio}}</td>
+      <td>{{listVent.fechaFin}}</td>
+      <td>{{listVent.horaInicio}}</td>
+      <td>{{listVent.horaFin}}</td>
+      <td>{{listVent.justificacionDeActividad}}</td>
+      <td>{{listVent.rda}}</td>
+      <td>{{listVent.estadoDeSolicitud}}</td>
+
+
+
+
+
+    </tr>
+

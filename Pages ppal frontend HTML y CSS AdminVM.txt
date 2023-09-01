@@ -1,0 +1,175 @@
+
+
+ng g m student/student --flat
+
+ng g c student/studentCreate
+ng g c student/studentDetails
+
+ng g s student/student --flat
+
+ng g m student/studentRouting --flat --module=student
+
+pages.component.html
+
+<mat-toolbar>
+  <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+    <mat-icon *ngIf="!sidenav.opened">
+      menu
+    </mat-icon>
+    <mat-icon *ngIf="sidenav.opened">
+      close
+    </mat-icon>
+  </button>
+  <span>AdminVM</span>
+  <span class="example-spacer"></span>
+</mat-toolbar>
+
+<mat-sidenav-container class="example-container">
+  <mat-sidenav class="mat-elevation-z8" #sidenav="matSidenav" mode="side" opened>
+      <img class="LogoClaro mat-elevation-z10" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Claro.svg/2048px-Claro.svg.png" alt="">
+      <h4 class="name">Gerencia Tecnica</h4>
+      <P class="designation"></P>
+
+      <mat-divider></mat-divider>
+
+      <button mat-button class="menu-button">
+        <mat-icon>storage</mat-icon>
+        <span><a [routerLink]="['navegacion/datacenter']" >Data Center</a></span>
+      </button>
+
+      <button mat-button class="menu-button">
+        <mat-icon>format_align_justify</mat-icon>
+        <span><a [routerLink]="['navegacion/crear-data-center']" >Crear D-Center</a></span>
+      </button>
+
+      <button mat-button class="menu-button">
+        <mat-icon>dashboard</mat-icon>
+        <span><a [routerLink]="['navegacion/ventana-mantenimiento']" >Ventana Mant</a></span>
+      </button>
+
+      <button mat-button class="menu-button">
+        <mat-icon>dashboard</mat-icon>
+        <span><a [routerLink]="['navegacion/crear-ventana-mantenimiento']" >Crear Vent Mant</a></span>
+      </button>
+
+      <button mat-button class="menu-button">
+        <mat-icon>person</mat-icon>
+        <span><a [routerLink]="['navegacion/usuarios']" >Usuarios</a></span>
+      </button>
+
+      <button mat-button class="menu-button">
+        <mat-icon>person</mat-icon>
+        <span><a [routerLink]="['navegacion/crear-usuario']" >Crear Usuario</a></span>
+      </button>
+
+      <mat-divider></mat-divider>
+
+      <button mat-button class="menu-button">
+        <mat-icon>logout</mat-icon>
+        <span>Logout</span>
+      </button>
+
+    </mat-sidenav>
+  <mat-sidenav-content>
+
+    <div class="content mat-elevation-z8">
+
+      <router-outlet></router-outlet>
+
+
+    </div>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+-------------------------------------------------------------
+
+pages.component.css
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+mat-sidenav-container{
+  height: calc(100vh - 55px);
+}
+
+/* barra superior */
+mat-toolbar{
+  background: #cf2823;
+  color: white;
+}
+/* panel vertical */
+mat-sidenav{
+  margin: 16px;
+  width: 210px;
+  border-right: none;
+  background: #cf2823;
+  color: white;
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+}
+
+/* margen y ancho de nuestra imagen */
+.LogoClaro {
+  margin-top: 16px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.name{
+margin-top: 8px;
+font-weight: normal ;
+}
+
+.designation{
+margin-top: 2px;
+font-size: 0.9rem;
+color: white;
+}
+/* Iconos de Menu */
+.menu-button{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1rem;
+}
+/* Iconos de Menu */
+mat-icon, span, a {
+  margin-right: 10px;
+  color: white;
+  font-size: 12px;
+  align-content: center;
+}
+
+/* Altura de contenido de la pagina */
+.content{
+  height: calc(100vh - 90px);
+  border-radius: 16px;
+  margin: 16px;
+  margin-left: 32px;
+  display: flex;
+  font-size: 1rem;
+  color: lightgrey;
+}
+
+mat-divider{
+  margin-top: 16px;
+  margin-bottom: 16px;
+  background-color: rgb(179, 165, 165);
+}
+
+mat-sidenav-container{
+  height: calc(100vh - 55px);
+}
+
+/* Para quitar etiquetas del panel lateral */
+a {
+  text-decoration: none;
+  margin-left: 1px;
+
+}

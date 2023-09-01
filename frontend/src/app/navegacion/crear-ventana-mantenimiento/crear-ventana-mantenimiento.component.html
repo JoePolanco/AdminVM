@@ -1,0 +1,72 @@
+
+
+<div class="form-container">
+  <h1>Registrar Ventanas de Mantenimiento</h1>
+
+<form>
+
+  <div class="form-group">
+    <label for="nombreDataCenter"> Nombre Data Center</label>
+    <input type="text" [(ngModel)]="nombreDataCenter" [ngModelOptions]="{standalone: true}" class="form-control" id="nombreDataCenter" placeholder="Ingrese nombre data center">
+
+  </div>
+
+  <div class="form-group">
+    <label for="idDataCenter"> ID Data Center</label>
+    <input type="text" [(ngModel)]="idDataCenter" [ngModelOptions]="{standalone: true}" class="form-control" id="idDataCenter" placeholder="Ingrese el id del data center">
+
+  </div>
+
+  <div class="form-group">
+    <label for="tipoMantenimiento">Tipo de mantenimiento</label>
+     <input type="text" [(ngModel)]="tipoMantenimiento" [ngModelOptions]="{standalone: true}" class="form-control" id="tipoMantenimiento" placeholder="Ingrese tipo de mantenimiento">
+
+  </div>
+
+  <div class="form-group">
+    <label for="fechaInicio"> Fecha de inicio de actividad</label>
+     <input type="text" [(ngModel)]="fechaInicio" [ngModelOptions]="{standalone: true}" class="form-control" id="fechaInicio" placeholder="Ingrese fecha de inicio de ventana">
+
+  </div>
+
+  <div class="form-group">
+    <label for="fechaFin"> Fecha de fin de actividad</label>
+     <input type="text" [(ngModel)]="fechaFin" [ngModelOptions]="{standalone: true}" class="form-control" id="fechaFin" placeholder="Ingrese fecha de finalizacion de ventana">
+
+  </div>
+
+  <div class="form-group">
+    <label for="horaInicio"> Hora de inicio de actividad</label>
+     <input type="text" [(ngModel)]="horaInicio" [ngModelOptions]="{standalone: true}" class="form-control" id="horaInicio" placeholder="Ingrese hora de inicio de ventana">
+
+  </div>
+
+  <div class="form-group">
+    <label for="horaFin"> Hora de fin de actividad</label>
+     <input type="text" [(ngModel)]="horaFin" [ngModelOptions]="{standalone: true}" class="form-control" id="horaFin" placeholder="Ingrese hora de finalizacion de ventana">
+
+  </div>
+
+  <div class="form-group">
+    <label for="justificacionDeActividad"> Justificacion de actividad</label>
+     <input type="text" [(ngModel)]="justificacionDeActividad" [ngModelOptions]="{standalone: true}" class="form-control" id="justificacionDeActividad" placeholder="Ingrese justificacion de ventana">
+
+  </div>
+
+  <div class="form-group">
+    <label for="rda"> RDA de acceso a Data Center</label>
+     <input type="text" [(ngModel)]="rda" [ngModelOptions]="{standalone: true}" class="form-control" id="rda" placeholder="Ingrese la RDA de acceso">
+
+  </div>
+
+  <div class="form-group">
+    <label for="estadoDeSolicitud"> Estado de solicitud</label>
+     <input type="text" [(ngModel)]="estadoDeSolicitud" [ngModelOptions]="{standalone: true}" class="form-control" id="estadoDeSolicitud" placeholder="Seleecione estado de solicitud">
+
+  </div>
+
+     <button type="submit" class="btn-registrar" (click)="registerr()">Enviar</button>
+
+</form>
+
+

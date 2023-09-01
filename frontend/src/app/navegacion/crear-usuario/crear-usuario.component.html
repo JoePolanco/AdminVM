@@ -1,0 +1,53 @@
+
+
+<div class="form-container">
+  <h1>Registrar Usuario</h1>
+
+<form>
+
+  <div class="form-group">
+    <label for="usuario"> Nombre de usuario</label>
+    <input type="text" [(ngModel)]="usuario" [ngModelOptions]="{standalone: true}" class="form-control" id="usuario" placeholder="Ingrese nombre usuario">
+
+  </div>
+
+  <div class="form-group">
+    <label for="clave"> Clave de acceso</label>
+    <input type="text" [(ngModel)]="clave" [ngModelOptions]="{standalone: true}" class="form-control" id="clave" placeholder="Ingrese clave">
+
+  </div>
+
+  <div class="form-group">
+    <label for="rol">Rol al que pertenecera</label>
+     <input type="text" [(ngModel)]="rol" [ngModelOptions]="{standalone: true}" class="form-control" id="rol" placeholder="Ingrese Rol al que pertenecera">
+
+  </div>
+
+  <div class="form-group">
+    <label for="nombres"> Nombre completo</label>
+     <input type="text" [(ngModel)]="nombres" [ngModelOptions]="{standalone: true}" class="form-control" id="nombres" placeholder="Ingrese su nombre">
+
+  </div>
+
+  <div class="form-group">
+    <label for="apellido">Apellido completo</label>
+     <input type="text" [(ngModel)]="apellidos" [ngModelOptions]="{standalone: true}" class="form-control" id="apellidos" placeholder="Ingrese su apellido">
+
+  </div>
+
+  <div class="form-group">
+    <label for="departamento">Departamento en que Labora</label>
+     <input type="text" [(ngModel)]="departamento" [ngModelOptions]="{standalone: true}" class="form-control" id="departamento" placeholder="Ingrese el departamento en que labora">
+
+  </div>
+
+  <div class="form-group">
+    <label for="email">Correo electronico</label>
+     <input type="text" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" class="form-control" id="email" placeholder="Ingrese correo electronico">
+
+  </div>
+
+
+     <button type="submit" class="btn-registrar" (click)="register()">Enviar</button>
+
+</form>

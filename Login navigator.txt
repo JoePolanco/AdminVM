@@ -1,0 +1,13 @@
+
+
+Login
+
+export class AuthComponent {
+
+    constructor (private router: Router){ }
+
+      login() {
+        this.router.navigateByUrl('/dashboard/navegacion/datacenter');
+      }
+
+}

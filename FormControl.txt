@@ -1,0 +1,53 @@
+
+
+var datacenterModel = require('./datacenterModel')
+
+var createDataCenterControllerFn = async (req, res) =>
+{
+  try{
+    const body = req.body
+    const datacenterModelData = new datacenterModel()
+    datacenterModelData.nombreDataCenter = body.nombreDataCenter
+    datacenterModelData.idDataCenter = body.idDataCenter
+    datacenterModelData.departamentoDataCenter = body.departamentoDataCenter
+    datacenterModelData.direccion = body.direccion
+    await datacenterModelData.save()
+
+    res.status(200).send({
+      "status": true, "message": "Data Center creado existosamente"
+    });
+  }
+  catch(error){
+    res.status(400).send(error)
+  }
+}
+
+
+----------------------------------------------
+
+PARA CREAR FUNCION RESET FORMULARIO
+
+  createFormGroup() {
+    return new FormGroup({
+
+      usuario:          new FormControl(''),
+      clave:            new FormControl(''),
+      rol:              new FormControl(''),
+      nombres:          new FormControl(''),
+      apellidos:        new FormControl(''),
+      departamento:     new FormControl(''),
+      email:            new FormControl(''),
+    })
+  }
+  createUserForm: FormGroup;
+
+  constructor(){
+    this.createUserForm = this.createFormGroup();
+  }
+
+  onResetForm(){
+    this.createUserForm.reset();
+  }
+  onSaveForm(){
+    console.log('saved');
+  }

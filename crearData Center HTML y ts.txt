@@ -1,0 +1,49 @@
+
+
+
+<div class="form-container">
+  <h1>Registrar Data Center</h1>
+  <form (ngSubmit)="onSaveForm()" >
+    
+    <label for="nombreDataCenter"> Nombre Data Center</label>
+     <input type="text" formControl="nombreDataCenter" placeholder="Ingrese nombre data center">
+     
+     <label for="idDataCenter"> ID Data Center</label>
+     <input type="text" formControl="idDataCenter" placeholder="Ingrese el id del data center">
+     
+     <label for="departamentoDataCenter">Departamento de Data Center</label>
+     <input type="text" formControl="departamentoDataCenter" placeholder="Ingrese el departamento">
+     
+     <label for="direccion"> Direccion de Data Center</label>
+     <input type="text" formControl="direccion" placeholder="Ingrese la direccion de data center">
+
+     <button type="submit" class="btn-registrar">Enviar</button>
+  </form>
+
+</div>
+
+----------------------------------------
+
+crear-data-center-component.ts
+
+createFormGroup() {
+    return new FormGroup({
+
+      nombreDataCenter: new FormControl(''),
+        idDataCenter:   new FormControl(''),
+        departamentoDataCenter:  new FormControl(''),
+        direccion: new FormControl('')
+    })
+  }
+  dataCenterForm: FormGroup;
+
+  constructor(){
+    this.dataCenterForm = this.createFormGroup();
+  }
+
+  onResetForm(){
+    this.dataCenterForm.reset();
+  }
+  onSaveForm(){
+    console.log('saved');
+  }

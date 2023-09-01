@@ -1,0 +1,77 @@
+<mat-toolbar>
+  <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+    <mat-icon *ngIf="!sidenav.opened">
+      menu
+    </mat-icon>
+    <mat-icon *ngIf="sidenav.opened">
+      close
+    </mat-icon>
+  </button>
+  <span>AdminVM</span>
+  <span class="example-spacer"></span>
+
+  <button mat-button class="menu-button">
+    <mat-icon>person</mat-icon>
+    <span><a href="https://www.miclaro.com.hn/login" >Mi Claro</a></span>
+  </button>
+
+</mat-toolbar>
+
+<mat-sidenav-container class="example-container">
+  <mat-sidenav class="mat-elevation-z8" #sidenav="matSidenav" mode="side" opened>
+      <img class="LogoClaro mat-elevation-z10" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Claro.svg/2048px-Claro.svg.png" alt="">
+      <h4 class="name">Gerencia Tecnica</h4>
+      <P class="designation"></P>
+
+
+      <mat-divider></mat-divider>
+
+      <button mat-button class="menu-button">
+        <mat-icon>storage</mat-icon>
+        <span><a [routerLink]="['navegacion/datacenter']" >Ver Data Center</a></span>
+      </button>
+
+      <button mat-button class="menu-button">
+        <mat-icon>format_align_justify</mat-icon>
+        <span><a [routerLink]="['navegacion/crear-data-center']" >Crear Data Center</a></span>
+      </button>
+
+      <button mat-button class="menu-button">
+        <mat-icon>dashboard</mat-icon>
+        <span><a [routerLink]="['navegacion/ventana-mantenimiento']" >Ver Ventana Mant</a></span>
+      </button>
+
+      <button mat-button class="menu-button">
+        <mat-icon>flip_to_back</mat-icon>
+        <span><a [routerLink]="['navegacion/crear-ventana-mantenimiento']" >Crear Vent Mant</a></span>
+      </button>
+
+      <button mat-button class="menu-button">
+        <mat-icon>supervisor_account</mat-icon>
+        <span><a [routerLink]="['navegacion/usuarios']" >Ver Usuarios</a></span>
+      </button>
+
+      <button mat-button class="menu-button">
+        <mat-icon>person</mat-icon>
+        <span><a [routerLink]="['navegacion/crear-usuario']" >Crear Usuario</a></span>
+      </button>
+
+      <mat-divider></mat-divider>
+
+      <button mat-button class="menu-button">
+        <mat-icon>logout</mat-icon>
+        <span><a routerLink="/login" >Cerrar sesion</a></span>
+      </button>
+
+    </mat-sidenav>
+  <mat-sidenav-content>
+
+    <div class="content mat-elevation-z8">
+
+      <router-outlet></router-outlet>
+
+
+    </div>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
