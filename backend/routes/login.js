@@ -12,14 +12,29 @@ router.post('/login', (req, res)=> {
     clave: clave
   }
  
-  Login.findOne(filtro, (err, user)=> {
-  if(err) return res.status(401).send("Hubo un error, no se pudo realizar el login.")
-  if(user){
-    res.status(201).send(user);
-  } else {
-    res.status(401).send("El usuario o la contraseña son incorrectos.");
-  }
+  Login.findOne(filtro).then(user=>{
+    if(user){
+      res.status(201).send(user);
+    } else {
+      res.status(401).send("El usuario o la contraseña son incorrectos.");
+    }
+  }).catch(err=>{
+    if(err) return res.status(401).send("Hubo un error, no se pudo realizar el login.")
+  }) 
   });
+
+
+// get a Usuarios por ID
+router.get('/usuarios/findByusuario', (req, res)=>{
+  let id=req.query.id;
+  console.log(req);
+  Login.findById(id)
+  .then(docs=>{
+      res.status(201).send(docs)
+  })
+  .catch(err=>{
+      res.status(500).send({error: err, message: "No se pudieron obtener los Data Center."})
+  })
 });
 
 router.post('/register', (req, res)=> {
@@ -49,11 +64,36 @@ router.post('/register', (req, res)=> {
   });
 });
 
+// PUT para edit-usuario
+router.put('/usuarios/:id', (req, res)=> {
+  const {usuario, clave, rol, nombres, apellidos, departamento,email} = req.body;
+  const id = req.params.id;
+console.log(id);
+  filtro = {
+      _id: id
+  };
+       let update = {
+      ...( usuario && { usuario }),
+      ...( clave && { clave }),
+      ...( rol && { rol }),
+      ...( nombres && { nombres }),
+      ...( apellidos && { apellidos }),
+      ...( departamento && { departamento }),
+      ...( email && { email })
+  }
+  console.log(update);
+  Login.findOneAndUpdate(filtro, update, {new: true})
+  .then(()=>{
+      res.status(201).send({message: "Se realizaron los cambios de manera exitosa."})
+  })
+  .catch(err=>{
+      res.status(500).send({error: err, message: "No se pudieron realizar los cambios."})
+  })
+});
+
 router.get('/usuarios', (req, res)=> {
   filtro = {}
-
   Login.find({})
-
     .then(docs=>{
         res.status(201).send(docs)
     })
@@ -61,19 +101,15 @@ router.get('/usuarios', (req, res)=> {
         res.status(500).send({error: err, message: "No se pudieron obtener los usuarios."})
     })
 });
-
-
+/*
 router.put('/password/:id', (req, res) => {
   const idUsuario = req.params.id;
   const clave = req.body.clave;
-
   if(!idUsuario) return res.status(401).send("Debe de incluir el id del usuario.");
   if(!clave) return res.status(401).send("Debe de incluir la clave nueva.");
-
   filtro = {
     _id: idUsuario
   }
-
   registro = {
     clave: clave
   }
@@ -83,6 +119,20 @@ router.put('/password/:id', (req, res) => {
     res.status(401).send("Se cambio la contraseña exitosamente.");
     console.log(response);
   });
+});
+*/
+router.delete('/usuarios/:id', (req, res)=> {
+  const id = req.params.id;
+  filtro = {
+      _id: id
+  };
+  Login.deleteOne(filtro)
+  .then(()=>{
+      res.status(201).send({message: "Se realizaron los cambios de manera exitosa."})
+  })
+  .catch(err=>{
+      res.status(500).send({error: err, message: "No se pudieron realizar los cambios."})
+  })
 });
 
 module.exports = router;

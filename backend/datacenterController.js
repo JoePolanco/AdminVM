@@ -9,6 +9,7 @@ var createDatacenterControllerFn = async (req, res) =>
     datacenterModelData.idDataCenter = body.idDataCenter
     datacenterModelData.departamentoDataCenter = body.departamentoDataCenter
     datacenterModelData.direccion = body.direccion
+    datacenterModelData.elementos = body.elementos
     await datacenterModelData.save()
 
     res.status(200).send({

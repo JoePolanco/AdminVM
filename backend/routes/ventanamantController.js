@@ -7,6 +7,7 @@ var createVentanaMantControllerFn = async (req, res) =>
     const ventanaMantenimientoModelData = new ventanaMantenimiento()
     ventanaMantenimientoModelData.nombreDataCenter = body.nombreDataCenter
     ventanaMantenimientoModelData.idDataCenter = body.idDataCenter
+    ventanaMantenimientoModelData.usuarioIngresoVMDataCenter.usuarioIngresoVMDataCenter
     ventanaMantenimientoModelData.fechaInicio = body.fechaInicio
     ventanaMantenimientoModelData.fechaFin = body.fechaFin
     ventanaMantenimientoModelData.horaInicio = body.horaInicio

@@ -6,6 +6,9 @@ import { CrearDataCenterComponent } from './crear-data-center/crear-data-center.
 import { CrearUsuarioComponent} from './crear-usuario/crear-usuario.component'
 import { VentanaMantenimientoComponent } from './ventana-mantenimiento/ventana-mantenimiento.component';
 import { CrearVentanaMantenimientoComponent } from './crear-ventana-mantenimiento/crear-ventana-mantenimiento.component';
+import { EditdatacenterComponent } from './editdatacenter/editdatacenter.component';
+import { EditusuarioComponent } from './editusuario/editusuario.component';
+import { EditventanaComponent } from './editventana/editventana.component';
 
 const routes: Routes = [
  { path: 'datacenter', component: DatacenterComponent},
@@ -13,7 +16,10 @@ const routes: Routes = [
  { path: 'crear-data-center', component: CrearDataCenterComponent},
  { path: 'crear-usuario', component: CrearUsuarioComponent},
  { path: 'ventana-mantenimiento', component: VentanaMantenimientoComponent},
- { path: 'crear-ventana-mantenimiento', component: CrearVentanaMantenimientoComponent}
+ { path: 'crear-ventana-mantenimiento', component: CrearVentanaMantenimientoComponent},
+ { path: 'editdatacenter/:id', component: EditdatacenterComponent },
+ { path: 'editusuario/:id', component: EditusuarioComponent},
+ { path: 'editventana/:id', component: EditventanaComponent },
 
 ];
 

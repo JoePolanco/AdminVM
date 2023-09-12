@@ -3,12 +3,13 @@ let router = express.Router();
 let ventanaMantenimiento = require('../models/ventanaMantenimiento');
 
 router.post('/', (req, res)=> {
-    const { id, nombreDataCenter, idDataCenter, tipoMantenimiento, fechaInicio, fechaFin, 
+    const { id, nombreDataCenter,usuarioIngresoVM, idDataCenter, tipoMantenimiento, fechaInicio, fechaFin, 
         horaInicio, horaFin, justificacionDeActividad, rda, estadoDeSolicitud } = req.body;
 
     
     if(!nombreDataCenter) return res.status(401).send({message: "Debe de ingresar nombre ."});
     if(!idDataCenter) return res.status(401).send({message: "Debe de ingresar un data center."});
+    if(!usuarioIngresoVM) return res.status(401).send({message: "Debe de ingresar un usuario valido."});
     if(!tipoMantenimiento) return res.status(401).send({message: "Debe de ingresar el tipo de mantenimiento "});
     if(!fechaInicio) return res.status(401).send({message: "Debe de ingresar fecha de inicio "});
     if(!fechaFin) return res.status(401).send({message: "Debe de ingresar fecha de fin "});
@@ -21,6 +22,7 @@ router.post('/', (req, res)=> {
     ventanaMantenimiento.create({
         nombreDataCenter: nombreDataCenter, 
         idDataCenter: idDataCenter,
+        usuarioIngresoVM: usuarioIngresoVM,
         tipoMantenimiento: tipoMantenimiento,
         fechaInicio: fechaInicio,
         fechaFin: fechaFin,
@@ -50,10 +52,10 @@ router.get('/', (req, res)=>{
 });
 
 router.put('/:id', (req, res)=> {
-    const {nombreDataCenter, idDataCenter, tipoMantenimiento, fechaInicio, fechaFin, 
+    const {nombreDataCenter, idDataCenter, usuarioIngresoVM, tipoMantenimiento, fechaInicio, fechaFin, 
         horaInicio, horaFin, justificacionDeActividad, rda, estadoDeSolicitud} = req.body;
     const id = req.params.id;
-
+console.log(id);
     filtro = {
         _id: id
     };
@@ -61,6 +63,7 @@ router.put('/:id', (req, res)=> {
      let update = {
         ...( nombreDataCenter && { nombreDataCenter }),
         ...( idDataCenter && { idDataCenter }),
+        ...( usuarioIngresoVM && { usuarioIngresoVM }),
         ...( tipoMantenimiento && { tipoMantenimiento }),
         ...( fechaInicio && { fechaInicio }),
         ...( fechaFin && { fechaFin }),

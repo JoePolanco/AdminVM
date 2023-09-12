@@ -11,18 +11,14 @@
 
      <p>Por favor ingrese su usuario y clave de acceso</p>
      </div>
-      <form [formGroup]="loginForm" >
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
 
-          <div class="form-group">
             <label for="usuario" class="form-label"></label>
             <input formControlName="usuario" type="usuario" class="form-control" id="usuario" placeholder="Ingrese usuario">
-          </div>
 
-          <div class="form-group">
             <label for="clave" class="form-label"></label>
-            <input type="clave" class="form-control" id="clave" placeholder="Ingrese clave">
+            <input formControlName="clave" type="password" class="form-control" id="clave" placeholder="Ingrese clave">
 
-          </div>
           <div class="forgot">
           <a href="reset.html">Olvido su clave?</a>
            </div>

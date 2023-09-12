@@ -1,10 +1,16 @@
+
+<button class="btn btn-primary" routerLink="/dashboard/navegacion/crear-ventana-mantenimiento">Agregar</button>
+<button class="btn btn-primary" mat-raised-button (click)="exportReportVentanas()">Exportar</button>
+
+
 <table class="table">
   <thead class="thead-dark">
     <tr>
       <th scope="col">Item</th>
-      <th scope="col">Nombre DC</th>
+      <th scope="col">Nombre</th>
       <th scope="col">ID Data Center</th>
-      <th scope="col">Tipo de Mant</th>
+      <th scope="col">Usuario</th>
+      <th scope="col">Tipo Mantenimiento</th>
       <th scope="col">Fecha Inicio</th>
       <th scope="col">Fecha Fin</th>
       <th scope="col">Hora Inicio</th>
@@ -12,13 +18,15 @@
       <th scope="col">Justificacion de Actividad</th>
       <th scope="col">RDA</th>
       <th scope="col">Estado de solicitud</th>
+      <th scope="col">Cerrar Ventana Mantenimiento</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let listVent of listaVentMant ">
-      <th scope="row">1</th>
+    <tr *ngFor="let listVent of listaVentMant; let i=index">
+      <th scope="row">{{i+1}}</th>
       <td>{{listVent.nombreDataCenter}}</td>
       <td>{{listVent.idDataCenter}}</td>
+      <td>{{listVent.usuarioIngresoVM}}</td>
       <td>{{listVent.tipoMantenimiento}}</td>
       <td>{{listVent.fechaInicio}}</td>
       <td>{{listVent.fechaFin}}</td>
@@ -29,8 +37,10 @@
       <td>{{listVent.estadoDeSolicitud}}</td>
 
 
-
-
+      <button class="btn btn-success btn-sm" (click)="cerrarTicket(listVent._id)">Cerrar</button>
 
     </tr>
+</table>
+
+
 

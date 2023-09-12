@@ -8,6 +8,9 @@ import { CrearDataCenterComponent } from './crear-data-center/crear-data-center.
 import { VentanaMantenimientoComponent } from './ventana-mantenimiento/ventana-mantenimiento.component';
 import { CrearVentanaMantenimientoComponent } from './crear-ventana-mantenimiento/crear-ventana-mantenimiento.component';
 import { FormsModule } from '@angular/forms';
+import { EditdatacenterComponent } from './editdatacenter/editdatacenter.component';
+import { EditventanaComponent } from './editventana/editventana.component';
+import { EditusuarioComponent } from './editusuario/editusuario.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +20,9 @@ import { FormsModule } from '@angular/forms';
     CrearDataCenterComponent,
     VentanaMantenimientoComponent,
     CrearVentanaMantenimientoComponent,
+    EditdatacenterComponent,
+    EditventanaComponent,
+    EditusuarioComponent,
   ],
   imports: [
     CommonModule,

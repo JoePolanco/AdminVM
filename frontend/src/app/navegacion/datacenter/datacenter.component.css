@@ -1,0 +1,12 @@
+button {
+  background: #cf2823;
+  box-shadow: #cf2823;
+  font-style:inherit;
+
+  box-sizing: border-box;
+  background: #cf2823;
+  color: #fff;
+  font-size: 11px;
+  margin-right: 2px;
+}
+

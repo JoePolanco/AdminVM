@@ -6,6 +6,7 @@ const ventanaMantenimientoSchema = new Schema({
    // id:        {type: Number, required: true, unique: true, default: 1},
     nombreDataCenter:         { type: String, require: true },
     idDataCenter:             { type: String, require: true},
+    usuarioIngresoVM:         { type: String, require: true},
     tipoMantenimiento:        { type: String, enum: [ 'Preventivo','Correctivo'] },
     fechaInicio:              { type: String, require: true },
     fechaFin:                 { type: String, require: true },

@@ -17,6 +17,8 @@ import { PagesModule } from './pages/pages.module';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatNativeDateModule} from '@angular/material/core';
+import { AuthModule } from './auth/auth.module';
+
 
 
 @NgModule({
@@ -33,6 +35,7 @@ import {MatNativeDateModule} from '@angular/material/core';
     MatIconModule, MatSidenavModule, MatDividerModule, MatButtonModule,
     PagesModule, ReactiveFormsModule,
     MatFormFieldModule, MatInputModule, MatDatepickerModule, MatNativeDateModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

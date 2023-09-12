@@ -12,4 +12,10 @@ public obtener (url:string){
   return this.http.get <any> (url)
   }
 
+  public actualizarVent(url:string, datos: any){
+    console.log(url);
+    return this.http.put <any>(url, datos)
+  }
+
+
 }

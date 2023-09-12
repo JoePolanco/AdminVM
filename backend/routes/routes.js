@@ -11,4 +11,6 @@ router.route('/auth/register').post(usuariosController.createUsuariosControllerF
 // Registrar Ventanas de Mantenimiento
 router.route('/ventanamantenimiento').post(ventanamantController.createVentanaMantControllerFn);
 
+
+
 module.exports = router;

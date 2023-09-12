@@ -10,6 +10,7 @@ export class CrearVentanaMantenimientoComponent {
 
         nombreDataCenter: string="";
         idDataCenter:   string="";
+        usuarioIngresoVM: string="";
         tipoMantenimiento:  string="";
         fechaInicio: string="";
         fechaFin:  string="";
@@ -26,6 +27,7 @@ export class CrearVentanaMantenimientoComponent {
           let bodyData = {
             "nombreDataCenter": this.nombreDataCenter,
             "idDataCenter": this.idDataCenter,
+            "usuarioIngresoVM": this.usuarioIngresoVM,
             "tipoMantenimiento": this.tipoMantenimiento,
             "fechaInicio": this.fechaInicio,
             "fechaFin": this.fechaFin,
@@ -43,6 +45,7 @@ export class CrearVentanaMantenimientoComponent {
 
             this.nombreDataCenter='';
             this.idDataCenter='';
+            this.usuarioIngresoVM='';
             this.tipoMantenimiento='';
             this.fechaInicio='';
             this.fechaFin='';

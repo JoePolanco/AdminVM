@@ -6,7 +6,8 @@ let dataCenterSchema = new Schema(
         nombreDataCenter:        { type: String, require: true },
         idDataCenter:            { type: String, require: true},
         departamentoDataCenter:  { type: String, require: true },
-        direccion:               { type: String, require: true },       
+        direccion:               { type: String, require: true },     
+        elementos:               { type: String, require: true },  
     }
 );
 

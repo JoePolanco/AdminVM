@@ -1,29 +1,38 @@
+<button class="btn btn-primary" routerLink="/dashboard/navegacion/crear-usuario">Agregar</button>
+<button class="btn btn-primary" mat-raised-button (click)="exportReportUsuarios()">Exportar</button>
+
 <table class="table">
   <thead class="thead-dark">
     <tr>
       <th scope="col">Item</th>
       <th scope="col">Usuario</th>
-      <th scope="col">Clave</th>
+
       <th scope="col">Rol</th>
       <th scope="col">Nombre</th>
       <th scope="col">Apellido</th>
       <th scope="col">Departamento</th>
       <th scope="col">email</th>
-
+      <th scope="col">Opcion</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let listUser of listaUsuarios ">
-      <th scope="row">1</th>
+    <tr *ngFor="let listUser of listaUsuarios; let i=index  ">
+      <th scope="row">{{i+1}}</th>
       <td>{{listUser.usuario}}</td>
-      <td>{{listUser.clave}}</td>
+
       <td>{{listUser.rol}}</td>
       <td>{{listUser.nombres}}</td>
       <td>{{listUser.apellidos}}</td>
       <td>{{listUser.departamento}}</td>
       <td>{{listUser.email}}</td>
+      <button class="btn btn-success btn-sm" [routerLink]="['/dashboard/navegacion/editusuario',listUser._id]">
+        <i class="fa fa-pencil fa-fw"></i></button>
 
+        <button class="btn btn-danger btn-sm" >
+        <i class="fa fa-trash" aria-hidden="true" (click)="Borrarusuario(listUser._id)"></i></button>
     </tr>
+</table>
+
 
 
 

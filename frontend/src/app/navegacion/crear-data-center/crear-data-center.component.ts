@@ -13,6 +13,7 @@ export class CrearDataCenterComponent {
         idDataCenter:   string="";
         departamentoDataCenter:  string="";
         direccion: string="";
+        elementos: string="";
 
         constructor(private http: HttpClient){
 
@@ -22,7 +23,8 @@ export class CrearDataCenterComponent {
             "nombreDataCenter": this.nombreDataCenter,
             "idDataCenter": this.idDataCenter,
             "departamentoDataCenter": this.departamentoDataCenter,
-            "direccion": this.direccion
+            "direccion": this.direccion,
+            "elementos": this.elementos
           };
           this.http.post("http://localhost:3030/datacenter",bodyData,{responseType: 'text'}).subscribe((resultData: any)=>
           {
@@ -33,6 +35,7 @@ export class CrearDataCenterComponent {
             this.idDataCenter='';
             this.departamentoDataCenter='';
             this.direccion='';
+            this.elementos= '';
 
             });
         }
